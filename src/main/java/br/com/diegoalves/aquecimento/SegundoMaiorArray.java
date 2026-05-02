@@ -1,6 +1,6 @@
 package br.com.diegoalves.aquecimento;
 
-public class MaiorNoArray {
+public class SegundoMaiorArray {
     public static void main(String[] args) {
         int[] numeros = {
                 482, 15, 927, 304, 118, 76, 650, 231, 999, 12,
@@ -15,12 +15,16 @@ public class MaiorNoArray {
                 565, 676, 787, 898, 909, 321, 654, 987, 147, 258
         };
         int maior = numeros[0];
+        int segundoMaior = numeros[0] - 1; // AHAHAHAHAHAHAHA
         for (int numero : numeros) {
             if (numero > maior) {
+                segundoMaior = maior;
                 maior = numero;
+            } else if (numero > segundoMaior && numero < maior) {
+                segundoMaior = numero;
             }
         }
-        System.out.println("O maior número da coleção é " + maior);
-
+        System.out.println("O maior é " + maior);
+        System.out.println("O segundo maior é " + segundoMaior);
     }
 }
